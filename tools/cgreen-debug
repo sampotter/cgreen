@@ -126,6 +126,8 @@ echo break $bp > .cgreen-debug-commands
 echo run $1 $2 >> .cgreen-debug-commands
 if command -v cgdb ; then
     debugger=cgdb
+elif command -v ggdb ; then
+    debugger=ggdb # MacPorts renames gdb "ggdb" to avoid name collisions
 else
     debugger=gdb
 fi
